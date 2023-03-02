@@ -1,0 +1,22 @@
+.content {
+    grid-area: c;
+    background-color: rgb(172, 172, 216);
+  }
+  
+  .land {
+    width: 100%;
+    height: 20%;
+  }
+  
+  .CatImg {
+    height: 20%;
+    width: 20%;
+  }
+
+  .item {
+    color: greenyellow;
+  }
+
+  .item.active {
+    color: gold;
+  }
