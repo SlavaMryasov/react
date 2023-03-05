@@ -12,11 +12,3 @@
     height: 20%;
     width: 20%;
   }
-
-  .item {
-    color: greenyellow;
-  }
-
-  .item.active {
-    color: gold;
-  }

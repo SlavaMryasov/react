@@ -1,0 +1,12 @@
+  .item {
+    color: greenyellow;
+  }
+
+  .item.active {
+    color: gold;
+  }
+
+  .avatar {
+    width: 30px;
+  }
+
