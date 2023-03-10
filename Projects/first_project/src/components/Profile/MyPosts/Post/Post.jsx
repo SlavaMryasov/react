@@ -2,13 +2,13 @@ import styles from "./Post.module.css";
 import Avatar from "./ava.png";
 
 const Post = (props) => {
-  console.log(props.message);
- //debugger; 
+
  return (
 <div className={`${styles.item} ${styles.active}`}>
-      <img className={styles.avatar} src={Avatar} alt="avatar" />     
+      <img className={styles.avatar} src={Avatar} alt="avatar" />  
+      {props.message}   
       <div>
-      <span>like</span>
+      <span>like {props.likesCount}</span> 
       </div>
     </div>
   );
