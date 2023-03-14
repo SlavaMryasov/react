@@ -1,0 +1,14 @@
+  .item {
+    color: black;
+    border-bottom: 1px solid rgb(177, 175, 175);
+    padding-top: 1%;
+  }
+
+  .item.active {
+    color: gold;
+  }
+
+  .avatar {
+    width: 30px;
+  }
+
