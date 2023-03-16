@@ -9,8 +9,10 @@ const ProfileInfo = () => {
             <img className={styles.land} src={Land} alt="land" />
             </div>
             <div>
-            <img className={styles.descriptionBlock} src={Cat} alt="cat" />
+            <div className={styles.descriptionBlock}>
+            <img className={styles.Cat} src={Cat} alt="cat" />
             ava +description
+            </div>
             </div>
         </div>
     )

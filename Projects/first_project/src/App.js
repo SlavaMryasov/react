@@ -10,7 +10,7 @@ import Settings from "./components/Content/Settings/Settings";
 
 
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="app-wripper">
@@ -18,8 +18,8 @@ const App = () => {
         <Navbar />
         <div class="app-wripper-content">
           <Routes>
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/messages/*" element={<Messages />} />
+            <Route path="/profile" element={<Profile postsData={props.postsData}/>} />
+            <Route path="/messages/*" element={<Messages usersData={props.usersData} messagesData={props.messagesData}/> }/>
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />

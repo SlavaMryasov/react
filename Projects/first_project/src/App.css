@@ -1,20 +1,23 @@
 * {
   box-sizing: content-box;
 }
+html{
+  background-color: rgb(213, 213, 213);
+}
 
 .app-wripper {
   display: grid;
   grid-template-areas:
-    "h h"
-    "n c";
+    "f h h e"
+    "f n c e";
+  grid-template-columns: 0fr 2fr 10fr 0fr;
 
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
   /* grid-gap: 10px; */
 }
 
 .app-wripper-content {
   grid-area: c;
  background-color: rgb(250, 250, 250); 
-  border-radius: 2%;
+  border-radius: 5px;
+  padding-bottom: 1.5%;
 }

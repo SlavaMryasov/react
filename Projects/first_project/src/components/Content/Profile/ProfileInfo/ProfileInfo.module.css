@@ -1,11 +1,21 @@
   .land {
       width: 100%;
       
-      
   }
 
   .descriptionBlock {
       height: 20%;
-      width: 20%;
+      width: 30%;
       padding-left: 2%;
+  }
+  img{
+    border-radius: 10px;
+  }
+
+  .descriptionBlock img{
+    position: relative;
+    bottom: 8vh;
+    width: 50%;
+    border-radius: 50%;
+    
   }
