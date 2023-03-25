@@ -2,6 +2,7 @@
     border-left: 1px solid rgb(192, 191, 191);
     padding: 5%;
     background-image: url(https://phonoteka.org/uploads/posts/2022-02/1645271833_1-phonoteka-org-p-kartinki-na-fon-soobshchenii-1.jpg);
+    border-radius: 10px;
 }
 
 .myMessage {
@@ -41,10 +42,17 @@
     margin-right: 10%;
 }
 
-.d img, .s img{
+.d img,
+.s img {
     width: 40px;
     height: 40px;
-    margin-right: 5px;
     border-radius: 50px;
-    margin-right: 10px;
+
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
 }

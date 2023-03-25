@@ -16,10 +16,16 @@ const App = (props) => {
       <div className="app-wripper">
         <Header />
         <Navbar />
-        <div class="app-wripper-content">
+        <div className="app-wripper-content">
           <Routes>
-            <Route path="/profile" element={<Profile profilePage={props.state.profilePage}/>} />
-            <Route path="/messages/*" element={<Messages messagesPage={props.state.messagesPage} /> }/>
+            <Route path="/profile" element={<Profile profilePage={props.state.profilePage}
+              createNewPost={props.createNewPost}
+              changeNewPostText={props.changeNewPostText} 
+              />} />
+            <Route path="/messages/*" element={<Messages messagesPage={props.state.messagesPage}
+             createNewMess={props.createNewMess} 
+             changeNewMessText={props.changeNewMessText}
+             />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
