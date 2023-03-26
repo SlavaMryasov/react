@@ -1,4 +1,6 @@
-import { rerender } from "../render";
+let rerender = () => {
+   
+}
 
 const state = {
     profilePage: {
@@ -35,7 +37,7 @@ const state = {
 export const createNewPost = (textPost) => {
     let newPost = { id: 6, message: textPost, likesCount: 0 }
     state.profilePage.postsData.push(newPost);
-    state.profilePage.newPostText='';
+    state.profilePage.newPostText = '';
     rerender(state);
 }
 
@@ -47,7 +49,7 @@ export const changeNewPostText = (symbol) => {
 export const createNewMess = (messageText) => {
     let newMess = { id: 7, message: messageText, messageSender: 'Me', avatarImg: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg" }
     state.messagesPage.usersData[0].messagesList.push(newMess);
-    state.messagesPage.newMessageText=''
+    state.messagesPage.newMessageText = ''
     rerender(state);
 }
 
@@ -55,5 +57,10 @@ export const changeNewMessText = (symbol) => {
     state.messagesPage.newMessageText = symbol;
     rerender(state);
 }
+
+export const subscribe = (observer) =>{
+    rerender= observer;
+}
+
 
 export default state;
