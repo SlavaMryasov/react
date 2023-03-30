@@ -3,19 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state, { changeNewMessText, changeNewPostText, createNewMess, createNewPost, subscribe} from './redux/state';
+import store from './redux/state';
 
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const rerender = (state) =>{
+const rerender = (state) => { // то,что пришло из getState засунули в state(state - это моя переменная, которой я присвоил то, что дал getState)
     root.render(
-        <App state ={state} createNewPost = {createNewPost} changeNewPostText={changeNewPostText} createNewMess={createNewMess} changeNewMessText={changeNewMessText}/>
+        <App state={state} dispatch={store.dispatch.bind(store)} />
     );
     reportWebVitals();
 
 }
-rerender(state);
 
-subscribe(rerender); 
+rerender(store.getState());
+
+store.subscribe(rerender); 

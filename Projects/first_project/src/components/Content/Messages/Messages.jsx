@@ -14,12 +14,14 @@ const Messages = (props) => {
     const refTextarea = createRef();
     const addNewMess = () =>{
         let text = refTextarea.current.value;
-        props.createNewMess(text);
+        let action = {type: 'createNewMess', messageText: text}
+        props.dispatch(action);
     }
 
     const addChangeText = () =>{
         let newSymbol = refTextarea.current.value;
-        props.changeNewMessText(newSymbol);
+        let action = {type: 'changeNewMessText', symbol: newSymbol}
+        props.dispatch(action);
     }
 
     return (

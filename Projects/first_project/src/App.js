@@ -19,12 +19,10 @@ const App = (props) => {
         <div className="app-wripper-content">
           <Routes>
             <Route path="/profile" element={<Profile profilePage={props.state.profilePage}
-              createNewPost={props.createNewPost}
-              changeNewPostText={props.changeNewPostText} 
+              dispatch={props.dispatch}
               />} />
             <Route path="/messages/*" element={<Messages messagesPage={props.state.messagesPage}
-             createNewMess={props.createNewMess} 
-             changeNewMessText={props.changeNewMessText}
+             dispatch={props.dispatch}
              />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
