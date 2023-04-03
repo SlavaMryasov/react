@@ -1,3 +1,6 @@
+const CREATE_NEW_POST = 'createNewPost';
+const CHANGE_NEW_POST_TEXT = 'changeNewPostText';
+
 let store = {
     _rerender() {
 
@@ -68,5 +71,15 @@ let store = {
     }
 }
 
+
+export const createNewPostActionCreator = (text) => ({
+  type: CREATE_NEW_POST,
+  textPost: text
+})
+
+export const changeNewPostTextActionCreator = (newSymbol) => ({
+  type: CHANGE_NEW_POST_TEXT,
+  symbol: newSymbol
+})
 
 export default store;

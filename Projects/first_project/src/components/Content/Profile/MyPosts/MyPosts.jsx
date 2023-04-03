@@ -1,7 +1,7 @@
 import { createRef } from "react";
 import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
-
+import { createNewPostActionCreator, changeNewPostTextActionCreator } from "../../../../redux/state";
 
 
 const MyPosts = (props) => {
@@ -10,13 +10,13 @@ const MyPosts = (props) => {
   const refForTextarea = createRef();
   const addNewPost = () => {
     let text = refForTextarea.current.value;
-    let action = {type: 'createNewPost', textPost: text}
+    let action = createNewPostActionCreator(text)
     props.dispatch(action);
   }
 
   const flux = () => {
     let newSymbol = refForTextarea.current.value;
-    let action = { type: 'changeNewPostText', symbol: newSymbol }
+    let action = changeNewPostTextActionCreator(newSymbol)
     props.dispatch(action);
   }
 
