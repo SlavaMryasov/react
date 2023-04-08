@@ -1,5 +1,5 @@
-const CREATE_NEW_POST = 'createNewPost';
-const CHANGE_NEW_POST_TEXT = 'changeNewPostText';
+import messageReducer from "./messageReducer";
+import profileReducer from "./profileReducer";
 
 let store = {
     _rerender() {
@@ -48,38 +48,11 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === 'createNewPost') {
-            let newPost = { id: 6, message: action.textPost, likesCount: 0 }
-            this._state.profilePage.postsData.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._rerender(this._state);
-        }
-        else if(action.type === 'changeNewPostText' ){
-            this._state.profilePage.newPostText = action.symbol;
-            this._rerender(this._state);
-        }
-        else if(action.type === 'createNewMess'){
-            let newMess = { id: 7, message: action.messageText, messageSender: 'Me', avatarImg: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg" }
-            this._state.messagesPage.usersData[0].messagesList.push(newMess);
-            this._state.messagesPage.newMessageText = ''
-            this._rerender(this._state);
-        }
-        else if(action.type === 'changeNewMessText'){
-            this._state.messagesPage.newMessageText = action.symbol;
-            this._rerender(this._state);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.messagesPage = messageReducer(this._state.messagesPage, action);
+        this._rerender(this._state);
+
     }
 }
-
-
-export const createNewPostActionCreator = (text) => ({
-  type: CREATE_NEW_POST,
-  textPost: text
-})
-
-export const changeNewPostTextActionCreator = (newSymbol) => ({
-  type: CHANGE_NEW_POST_TEXT,
-  symbol: newSymbol
-})
 
 export default store;

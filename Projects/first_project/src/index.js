@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './redux/state';
+import store from './redux/reduxStore';
 
 
 
@@ -19,4 +19,8 @@ const rerender = (state) => { // то,что пришло из getState засу
 
 rerender(store.getState());
 
-store.subscribe(rerender); 
+
+store.subscribe(()=>{
+    let state = store.getState();
+    rerender(state);
+}); 

@@ -3,24 +3,24 @@ import Message from './Dialog/Message/Message';
 import styles from './Messages.module.css';
 import stylesDialog from './Dialog/Dialog.module.css';
 import stylesMessage from './Dialog/Message/Message.module.css';
-import { createRef } from 'react';
+import { changeNewMessTextActionCreateor, createNewMessActionCreator } from '../../../redux/messageReducer';
 
 
 
 const Messages = (props) => {
     const usersElements = props.messagesPage.usersData.map(users => <Dialog className={styles.link} userName={users.userName} id={users.id} />)
     const messagesElements = props.messagesPage.usersData.map(user => user.messagesList.map(messages => <Message message={messages.message} messageSender={messages.messageSender} avatarImg={messages.avatarImg} />))
-    
-    const refTextarea = createRef();
-    const addNewMess = () =>{
-        let text = refTextarea.current.value;
-        let action = {type: 'createNewMess', messageText: text}
+
+
+    const addNewMess = (event) => {
+        let text = event.target.value;
+        let action = createNewMessActionCreator(text)
         props.dispatch(action);
     }
 
-    const addChangeText = () =>{
-        let newSymbol = refTextarea.current.value;
-        let action = {type: 'changeNewMessText', symbol: newSymbol}
+    const addChangeText = (event) => {
+        let newSymbol = event.target.value;
+        let action = changeNewMessTextActionCreateor(newSymbol)
         props.dispatch(action);
     }
 
@@ -32,8 +32,8 @@ const Messages = (props) => {
             <div className={stylesMessage.dialogOpen}>
                 {messagesElements}
                 <div className={styles.newMessageBlock}>
-                    <textarea onChange={addChangeText} ref={refTextarea} value={props.messagesPage.newMessageText} className={styles.newMessage} />
-                    <button onClick={addNewMess}>Send</button>
+                    <textarea onChange={addChangeText} value={props.messagesPage.newMessageText} className={styles.newMessage} />
+                    <button onClick={addNewMess} value={props.messagesPage.newMessageText}>Send</button>
                 </div>
             </div>
         </div>
