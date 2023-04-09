@@ -13,6 +13,7 @@ let initialStore ={
 
 
 const profileReducer = (state = initialStore, action) => {
+    
     switch (action.type) {
         case CREATE_NEW_POST:
             let newPost = { id: 6, message: action.textPost, likesCount: 0 }
