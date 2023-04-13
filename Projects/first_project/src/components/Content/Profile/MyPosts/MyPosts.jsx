@@ -1,7 +1,6 @@
 
 import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import { createNewPostActionCreator, changeNewPostTextActionCreator } from "../../../../redux/profileReducer";
 
 
 const MyPosts = (props) => {
@@ -9,23 +8,21 @@ const MyPosts = (props) => {
 
 
   const addNewPost = (event) => {
-    let text = event.target.value
-    let action = createNewPostActionCreator(text)
-    props.dispatch(action);
+    let text = event.target.value;
+    props.addNewPostContainer(text);
   }
 
   const flux = (event) => {
     let newSymbol = event.target.value;
-    let action = changeNewPostTextActionCreator(newSymbol)
-    props.dispatch(action);
+    props.fluxContainer(newSymbol)
   }
 
   return (
     <div className={styles.postBlock}>
       My posts
       <div>
-        <textarea onChange={flux}  value={props.newPostText} />
-        <button onClick={addNewPost}  value={props.newPostText}  className="add">Add post</button>
+        <textarea onChange={flux} value={props.newPostText} />
+        <button onClick={addNewPost} value={props.newPostText} className="add">Add post</button>
       </div>
       <div className={styles.posts} id='myPost'>
         {posts}

@@ -3,10 +3,10 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Profile from "./components/Content/Profile/Profile";
-import Messages from "./components/Content/Messages/Messages";
 import News from "./components/Content/News/News";
 import Music from "./components/Content/Music/Music";
 import Settings from "./components/Content/Settings/Settings";
+import MessagesContainer from "./components/Content/Messages/MessagesContainer";
 
 
 
@@ -20,10 +20,10 @@ const App = (props) => {
           <Routes>
             <Route path="/profile" element={<Profile profilePage={props.state.profilePage}
               dispatch={props.dispatch}
-              />} />
-            <Route path="/messages/*" element={<Messages messagesPage={props.state.messagesPage}
-             dispatch={props.dispatch}
-             />} />
+            />} />
+            <Route path="/messages/*" element={<MessagesContainer messagesPage={props.state.messagesPage}
+              dispatch={props.dispatch}
+            />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />

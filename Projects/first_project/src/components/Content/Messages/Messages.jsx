@@ -3,8 +3,6 @@ import Message from './Dialog/Message/Message';
 import styles from './Messages.module.css';
 import stylesDialog from './Dialog/Dialog.module.css';
 import stylesMessage from './Dialog/Message/Message.module.css';
-import { changeNewMessTextActionCreateor, createNewMessActionCreator } from '../../../redux/messageReducer';
-
 
 
 const Messages = (props) => {
@@ -14,14 +12,12 @@ const Messages = (props) => {
 
     const addNewMess = (event) => {
         let text = event.target.value;
-        let action = createNewMessActionCreator(text)
-        props.dispatch(action);
+        props.addNewMessContainer(text)
     }
 
     const addChangeText = (event) => {
         let newSymbol = event.target.value;
-        let action = changeNewMessTextActionCreateor(newSymbol)
-        props.dispatch(action);
+        props.addChangeTextContainer(newSymbol)
     }
 
     return (
