@@ -18,12 +18,8 @@ const App = (props) => {
         <Navbar />
         <div className="app-wripper-content">
           <Routes>
-            <Route path="/profile" element={<Profile profilePage={props.state.profilePage}
-              dispatch={props.dispatch}
-            />} />
-            <Route path="/messages/*" element={<MessagesContainer messagesPage={props.state.messagesPage}
-              dispatch={props.dispatch}
-            />} />
+            <Route path="/profile" element={<Profile store={props.store} />} />
+            <Route path="/messages/*" element={<MessagesContainer store={props.store} />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
