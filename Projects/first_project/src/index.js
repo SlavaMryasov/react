@@ -19,10 +19,6 @@ const rerender = () => { // то,что пришло из getState засуну�
 
 }
 
-rerender(store.getState());
+rerender();
 
 
-store.subscribe(() => {
-    let state = store.getState();
-    rerender(state);
-}); 

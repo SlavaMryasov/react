@@ -6,13 +6,14 @@ import stylesMessage from './Dialog/Message/Message.module.css';
 
 
 const Messages = (props) => {
-    const usersElements = props.messagesPage.usersData.map(users => <Dialog className={styles.link} userName={users.userName} id={users.id} />)
-    const messagesElements = props.messagesPage.usersData.map(user => user.messagesList.map(messages => <Message message={messages.message} messageSender={messages.messageSender} avatarImg={messages.avatarImg} />))
+    const usersElements = props.messagesPage.usersData.map(users => <Dialog className={styles.link} key={users.id} userName={users.userName} id={users.id} />)
+    const messagesElements = props.messagesPage.usersData.map(user => user.messagesList.map(messages => <Message message={messages.message} key={messages.id}  messageSender={messages.messageSender} avatarImg={messages.avatarImg} />))
 
 
     const addNewMess = (event) => {
         let text = event.target.value;
         props.addNewMessContainer(text)
+        console.log(text)
     }
 
     const addChangeText = (event) => {

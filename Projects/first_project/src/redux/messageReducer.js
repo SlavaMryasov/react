@@ -23,14 +23,19 @@ let initialStore ={
 
 const messageReducer = (state = initialStore, action) => {
     switch (action.type) {
+        case CHANGE_NEW_MESS_TEXT: 
+            return {
+                ...state,
+                newMessageText: action.symbol
+            }
+            
         case CREATE_NEW_MESS:
             let newMess = { id: 7, message: action.messageText, messageSender: 'Me', avatarImg: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg" }
-            state.usersData[0].messagesList.push(newMess);
-            state.newMessageText = '';
-            return state;
-        case (CHANGE_NEW_MESS_TEXT):
-            state.newMessageText = action.symbol;
-            return state;
+            return {
+                ...state,
+                messagesList: [...state.usersData[0].messagesList, newMess],
+                newMessageText : '',
+            }
         default:
             return state
     }

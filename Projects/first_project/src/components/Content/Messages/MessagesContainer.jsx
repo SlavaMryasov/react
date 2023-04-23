@@ -11,12 +11,12 @@ const mapStateToProps = (state) => {//state взяли из store в котор�
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addChangeTextContainer: (text) => {
-            dispatch(createNewMessActionCreator(text)); // dispatch пишел из пропсов(пришел от state, в стейте так же лежит store)
+        addNewMessContainer: (text) => {
+            dispatch(createNewMessActionCreator(text));
         },
-        addNewMessContainer: (newSymbol) => {
-            dispatch(changeNewMessTextActionCreateor(newSymbol));
-        }
+        addChangeTextContainer: (newSymbol) => {
+            dispatch(changeNewMessTextActionCreateor(newSymbol)); // dispatch пишел из пропсов(пришел от state, в стейте так же лежит store)
+        },
     }
 }
 
