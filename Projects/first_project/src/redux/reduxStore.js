@@ -5,10 +5,12 @@ import usersReducer from "./usersReducer";
 
 
 
+
+
 let reducers = combineReducers({
     profilePage: profileReducer,
     messagesPage: messageReducer,
-    usersPage: usersReducer,
+    usersPage: usersReducer
 })
 
 let store = legacy_createStore(reducers);

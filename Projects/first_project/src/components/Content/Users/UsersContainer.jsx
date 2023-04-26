@@ -1,6 +1,7 @@
-import { followAC, unfollowAC, setUsersAC } from '../../../redux/usersReduser';
-import Users from './Users';
+import { followAC, setUsersAC, unfollowAC } from '../../../redux/usersReducer';
+import Users from './Users'
 import { connect } from 'react-redux';
+
 
 
 const mapStateToProps = (state) => {
@@ -29,5 +30,3 @@ const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users)
 
 
 export default UsersContainer;
-
-

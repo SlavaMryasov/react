@@ -3,10 +3,10 @@ import styles from './Users.module.css'
 const Users = (props) => {
   return <div>
     {
-      props.users.map(user => <div key={user.id}>
+      props.users.map (user => <div key={user.id}>
         <div>
-          <div className={styles.img}>
-            <img src={user.photoURL} />
+          <div>
+            <img src={user.photoURL}  className={styles.img}/>
           </div>
           <span>
             {user.followed 
